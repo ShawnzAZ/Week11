@@ -1,0 +1,25 @@
+.container {
+    text-align: center;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #a7b3f7;
+}
