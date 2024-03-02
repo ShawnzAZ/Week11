@@ -9,14 +9,16 @@
 
 
 
-
+// setup the game interation / selector
 const cells = document.querySelectorAll('.cell');
 const message = document.getElementById('message');
 const restartButton = document.getElementById('restartButton');
 let currentPlayer = 'X';
 let gameActive = true;
+// track current player
 message.textContent = `${currentPlayer}'s turn`;
-const winningConditions = [
+// what winning looks like (yeah, Agile joke)
+1const winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -64,10 +66,8 @@ function endGame(draw) {
         message.textContent = 'It\'s a draw!';
     } else {
         message.textContent = `${currentPlayer} wins!`;
-// Figuring out bootstrap alert for winner
-        var alertDiv = document.createElement('div');
-        alertDiv.className = 'alert alert-primary';
-        alertDiv.textContent = `${currentPlayer} wins!`;
+// ** TODO ** Figure out bootstrap alert for winner
+
     }
 }
 
