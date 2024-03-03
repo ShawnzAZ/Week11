@@ -18,7 +18,7 @@ let gameActive = true;
 // track current player
 message.textContent = `${currentPlayer}'s turn`;
 // what winning looks like (yeah, Agile joke)
-1const winningConditions = [
+const winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -28,6 +28,8 @@ message.textContent = `${currentPlayer}'s turn`;
     [0, 4, 8],
     [2, 4, 6]
 ];
+
+// function to do the click a box interaction / turn actions
 
 function handleCellClick(event) {
     const cell = event.target;
@@ -46,6 +48,8 @@ function handleCellClick(event) {
     }
 }
 
+// see if either player won
+
 function checkWin(player) {
     return winningConditions.some(combination => {
     return combination.every(index => {
@@ -53,6 +57,8 @@ function checkWin(player) {
     });
     });
 }
+
+// functions to call game a draw when you run out of squares
 
 function isDraw() {
     return [...cells].every(cell => {
@@ -66,10 +72,10 @@ function endGame(draw) {
         message.textContent = 'It\'s a draw!';
     } else {
         message.textContent = `${currentPlayer} wins!`;
-// ** TODO ** Figure out bootstrap alert for winner
-
     }
 }
+
+// reset the board / game
 
 function restartGame() {
     currentPlayer = 'X';
